@@ -24,6 +24,8 @@ function neuesHindernis () {
     hindernisse = [game.createSprite(4, 3)]
     if (Math.randomBoolean()) {
         hindernisse.push(game.createSprite(4, 2))
+        hindernisse.push(game.createSprite(4, 1))
+        hindernisse.push(game.createSprite(4, 0))
     } else {
         hindernisse.push(game.createSprite(4, 4))
     }
