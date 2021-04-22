@@ -10,7 +10,7 @@ function bewegeDinoUm (pixel: number) {
     return 0
 }
 input.onButtonPressed(Button.A, function () {
-    music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.OnceInBackground)
+    music.playMelody("- - - - - - - - ", 120)
     bewegeDinoUm(3)
     basic.pause(500)
     bewegeDinoUm(-3)
@@ -29,7 +29,6 @@ function neuesHindernis () {
     }
 }
 function init () {
-    music.setVolume(39)
     punkte = 0
     Leben = 3
     neuesHindernis()
@@ -72,11 +71,8 @@ basic.forever(function () {
     if (berührtHindernis()) {
         Leben += -1
         if (Leben == 0) {
-            music.startMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once)
             basic.showString("" + (punkte))
             init()
-        } else {
-            music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.OnceInBackground)
         }
     }
 })
